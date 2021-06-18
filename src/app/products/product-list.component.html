@@ -47,7 +47,12 @@
             <td>
               {{ product.price | currency: "EUR":"symbol-narrow":"1.2-2" }}
             </td>
-            <td><pm-star [rating]="product.starRating"></pm-star></td>
+            <td>
+              <pm-star
+                [rating]="product.starRating"
+                (ratingClicked)="onRatingClicked($event)"
+              ></pm-star>
+            </td>
           </tr>
         </tbody>
       </table>
